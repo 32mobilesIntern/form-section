@@ -4,11 +4,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const RadialBarChart = () => {
+const RadialBarChart = ({assigned, pending, completed, approved, rejected, live}) => {
     const data = {
         datasets: [
             {
-                data: [88, 12],
+                label: "Assigned",
+                value: "Assigned",
+                data: [assigned, 100-assigned],
                 backgroundColor: ['#208DE7', '#E9ECEF'],
                 borderColor: ['#208DE7', '#E9ECEF'],
                 borderWidth: 0,
@@ -19,7 +21,9 @@ const RadialBarChart = () => {
                 weight: 15,
             },
             {
-                data: [88, 12],
+                label: "Pending",
+                value: "Pending",
+                data: [pending, 100-pending],
                 backgroundColor: ['#F6CF00', '#E9ECEF'],
                 borderColor: ['#F6CF00', '#E9ECEF'],
                 borderWidth: 0,
@@ -30,7 +34,9 @@ const RadialBarChart = () => {
                 weight: 5,
             },
             {
-                data: [52, 48],
+                label: "Completed",
+                value: "Completed",
+                data: [completed, 100-completed],
                 backgroundColor: ['#5DB2F5', '#E9ECEF'],
                 borderColor: ['#5DB2F5', '#E9ECEF'],
                 borderWidth: 0,
@@ -41,7 +47,9 @@ const RadialBarChart = () => {
                 weight: 3,
             },
             {
-                data: [88, 12],
+                label: "Approved",
+                value: "Approved",
+                data: [approved, 100-approved],
                 backgroundColor: ['#1AA628', '#E9ECEF'],
                 borderColor: ['#1AA628', '#E9ECEF'],
                 borderWidth: 0,
@@ -52,7 +60,9 @@ const RadialBarChart = () => {
                 weight: 2.25,
             },
             {
-                data: [55, 45],
+                label: "Rejected",
+                value: "Rejected",
+                data: [rejected, 100-rejected],
                 backgroundColor: ['#FF4F4F', '#E9ECEF'],
                 borderColor: ['#FF4F4F', '#E9ECEF'],
                 borderWidth: 0,
@@ -63,7 +73,9 @@ const RadialBarChart = () => {
                 weight: 1.6,
             },
             {
-                data: [50, 50],
+                label: "Live",
+                value: "Live",
+                data: [live, 100-live],
                 backgroundColor: ['#C5002F', '#E9ECEF'],
                 borderColor: ['#C5002F', '#E9ECEF'],
                 borderWidth: 0,
@@ -84,7 +96,7 @@ const RadialBarChart = () => {
             },
         },
         animation: {
-            animateRotate: false,
+            animateRotate: true,
         },
         cutoutPercentage: 60,
     };

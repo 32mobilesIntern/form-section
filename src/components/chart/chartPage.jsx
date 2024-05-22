@@ -4,6 +4,12 @@ import ArticleChartBox from "./subcomponents/articlesChartBox";
 import NewsChartBox from "./subcomponents/newsChartBox";
 
 export default function Chart() {
+    const assigned=88;
+    const pending=88;
+    const completed=52;
+    const approved=88;
+    const rejected=55;
+    const live=50;
     return (
         <div className=" p-5 lg:p-10">
             <div className="flex gap-2 lg:gap-4">
@@ -17,16 +23,16 @@ export default function Chart() {
                 </div>
             </div>
             <div className="flex flex-wrap lg:flex-nowrap gap-5 mt-10">
-                <div className="w-full lg:w-1/2"><ArticleChartBox/></div>                
-                <div className="w-full lg:w-1/2"><NewsChartBox/></div>                
+                <div className="w-full lg:w-1/2"><ArticleChartBox assigned={assigned} pending={pending} completed={completed} approved={approved} rejected={rejected} live={live}/></div>                
+                <div className="w-full lg:w-1/2"><NewsChartBox assigned={assigned} pending={pending} completed={completed} approved={approved} rejected={rejected} live={live}/></div>                
             </div>
             <div className="flex gap-3 lg:gap-24 items-center justify-center mt-10">
-                <ChartData title={"Assigned"} value={"40"} colour="#007DE3" />
-                <ChartData title={"Pending"} value={"12"} colour="#F6CF00" />
-                <ChartData title={"Completed"} value={"12"} colour="#84CAFF" />
-                <ChartData title={"Approved"} value={"12"} colour="#1AA628" />
-                <ChartData title={"Rejected"} value={"12"} colour="#FF4F4F" />
-                <ChartData title={"Live"} value={"12"} colour="#C5002F" />
+                <ChartData title={"Assigned"} value={assigned} colour="#007DE3" />
+                <ChartData title={"Pending"} value={pending} colour="#F6CF00" />
+                <ChartData title={"Completed"} value={completed} colour="#84CAFF" />
+                <ChartData title={"Approved"} value={approved} colour="#1AA628" />
+                <ChartData title={"Rejected"} value={rejected} colour="#FF4F4F" />
+                <ChartData title={"Live"} value={live} colour="#C5002F" />
             </div>
         </div>
     );

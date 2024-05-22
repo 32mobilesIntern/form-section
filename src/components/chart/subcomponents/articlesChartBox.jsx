@@ -1,8 +1,9 @@
 import React from "react";
-import {SelectDemo1,SelectDemo2} from "@/components/forms/subcomponents/Selectdemo";
+import {SelectDemo1,SelectDemo2} from "@/components/chart/subcomponents/Selectdemo";
 import RadialBarChart from "./radialBarCharts";
 
-export default async function ArticleChartBox(){
+export default async function ArticleChartBox({assigned, pending, completed, approved, rejected, live}){
+    // const total=assigned+pending+completed+approved+rejected+live;
     return(
         <div className=" rounded-xl border-2 border-[#ff01c7] p-5">
             <div className="flex justify-between">
@@ -13,7 +14,7 @@ export default async function ArticleChartBox(){
                 </div>
             </div>
             <div className="h-[28rem] flex items-center justify-center my-5 lg:my-10">
-                <RadialBarChart/>
+                <RadialBarChart assigned={assigned} pending={pending} completed={completed} approved={approved} rejected={rejected} live={live}/>
             </div>
         </div>
     );
