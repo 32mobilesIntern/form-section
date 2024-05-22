@@ -9,7 +9,7 @@ export default async function FormSection() {
             <Tabs defaultValue="Section1" className="w-full">
                 <TabsList className="flex gap-5 justify-center w-full">
                     <TabsTrigger className="h-10 text-[#98a2b3] font-medium text-base leading-5" value="Section1">Section 1</TabsTrigger>
-                    <TabsTrigger className="h-10 text-[#98a2b3] font-medium text-base leading-5" value="Section2">Section 2</TabsTrigger>
+                    <TabsTrigger className="h-10 text-[#98a2b3] font-medium text-base leading-5 data-[state=active]:bg-[#FDBF22]" value="Section2">Section 2</TabsTrigger>
                 </TabsList>
                 <TabsContent value="Section1">
                     <MandatoryForm />
